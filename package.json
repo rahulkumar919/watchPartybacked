@@ -1,26 +1,20 @@
 {
-  "name": "watch-party-system",
+  "name": "watchparty-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "YouTube Watch Party System — Web3Task Internship Assignment",
+  "description": "YouTube Watch Party Backend - Render Deployment",
   "workspaces": [
     "apps/server",
-    "apps/web",
     "packages/types"
   ],
   "scripts": {
-    "dev": "npm run dev --workspaces --if-present",
-    "dev:server": "npm run dev --workspace=apps/server",
-    "dev:web": "npm run dev --workspace=apps/web",
-    "build": "npm run build --workspace=packages/types && npm run build --workspace=apps/server && npm run build --workspace=apps/web",
-    "build:server": "npm run build --workspace=apps/server",
-    "build:web": "npm run build --workspace=apps/web",
-    "test": "npm run test --workspaces --if-present",
-    "test:server": "npm run test --workspace=apps/server",
-    "test:web": "npm run test --workspace=apps/web",
-    "test:e2e": "npm run test:e2e --workspace=apps/web",
+    "dev": "npm run dev --workspace=apps/server",
+    "build": "npm run build --workspace=packages/types && npm run build --workspace=apps/server",
+    "test": "npm run test --workspace=apps/server",
     "lint": "npm run lint --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present"
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:generate": "npm run db:generate --workspace=apps/server",
+    "db:migrate:deploy": "npm run db:migrate:deploy --workspace=apps/server"
   },
   "engines": {
     "node": ">=20.0.0",
